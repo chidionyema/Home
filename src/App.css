@@ -1,38 +1,123 @@
-.App {
-  text-align: center;
+/* Typography Import */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700');
+
+/* Root Variables */
+:root {
+  --primary-color: #282c34;
+  --accent-color: #61dafb;
+  --text-color: #ffffff;
+  --font-family: 'Roboto', sans-serif;
+  --font-size-base: 16px;
+  --font-size-heading: 2rem;
+  --space-xs: 4px;
+  --space-s: 8px;
+  --space-m: 16px;
+  --space-l: 24px;
+  --space-xl: 32px;
+  --border-radius: 4px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Base Styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  color: var(--text-color);
+  background-color: var(--primary-color);
+}
+.nav-list {
+  display: flex; /* Aligns children (nav items) in a row */
+  list-style: none; /* Removes default list styling like bullets */
+  padding: 0; /* Removes default padding */
+  margin: 0; /* Adjusts margin as needed */
+  align-items: center; /* Centers items vertically */
+  gap: 20px; /* Optional: Adds space between navigation items */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.nav-list li {
+  /* Additional styles for list items if needed */
 }
 
+.nav-list a {
+  text-decoration: none; /* Removes underline from links */
+  color: inherit; /* Inherits color from parent elements */
+  padding: 10px; /* Adds padding around the links for better accessibility */
+  /* Add any other link-specific styles here */
+}
+
+.nav-list a:hover {
+  /* Styles for hover state of links */
+}
+
+/* App Header */
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  text-align: center;
+  padding: var(--space-xl);
+  background-color: var(--primary-color);
+}
+
+/* Navigation Container */
+.nav-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-bottom: var(--space-l);
 }
 
-.App-link {
-  color: #61dafb;
+/* Logo Styling */
+.App-logo {
+  height: 15vmin;
+  pointer-events: none;
+  margin: 0 auto; /* Centers horizontally and keeps the bottom margin */
+  display: block; /* Necessary for margin: auto to work */
+  margin-bottom: var(--space-m);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+/* Headings */
+h1 {
+  font-size: var(--font-size-heading);
+  margin: var(--space-s) 0;
+}
+
+/* Paragraphs */
+p {
+  margin: var(--space-s) 0;
+}
+
+/* Links */
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: lighten(var(--accent-color), 10%);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .App-header {
+    padding: var(--space-m);
   }
-  to {
-    transform: rotate(360deg);
+
+ /* Parent container of the logo */
+ .App-logo-container {
+  text-align: center; /* Centers inline or inline-block elements */
+}
+
+/* Logo styling */
+.App-logo {
+  height: 20vmin;
+}
+
+  h1 {
+    font-size: 1.5rem;
   }
+}
+
+/* Accessibility Improvements */
+a:focus, button:focus {
+  outline: 2px dashed var(--accent-color);
+  outline-offset: 4px;
 }
